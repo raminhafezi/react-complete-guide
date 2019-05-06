@@ -50,18 +50,25 @@ How to resolve "Permission denied (publickey). fatal: Could not read from remote
 
 1- make sure you have added the remote URL into your git 
 ---> git remote -v
+
 2- if nothing return, set your remote url 
 ---> git remote set-url origin git://github.com/YourDirectory/YourProject.git
+
 
 3- make sure you the right publik key set in your local workstation and your github
 ---> cat ~/.ssh/
 you have to see id_rsa.pub and id_rsa files
 
+
 4- if not, generate SSH rsa key by
 ---> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 --) the open id_rsa.pub with the note editor, copy the content (might start with ssh-rsa ....... ),
+
+
 --) go to your github, setting, SSH and GPG keys, New SSH Key,
+
+
 --) paste your generated key.
 
 5- git push origin master --force to resolve conflict by your local workstation codes.
