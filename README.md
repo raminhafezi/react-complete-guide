@@ -46,6 +46,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 ========== Resolve Note =======
+
 How to resolve "Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists." Errro in github
 
 1- make sure you have added the remote URL into your git 
@@ -63,7 +64,7 @@ you have to see id_rsa.pub and id_rsa files
 4- if not, generate SSH rsa key by
 ---> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
---) the open id_rsa.pub with the note editor, copy the content (might start with ssh-rsa ....... ),
+--) then open id_rsa.pub with the note editor, copy the content (might start with ssh-rsa ....... ),
 
 
 --) go to your github, setting, SSH and GPG keys, New SSH Key,
