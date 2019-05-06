@@ -10,11 +10,12 @@ import WrapperComponent from '../../hoc/withErrorHandler/withErrorHandler'
 
 
 const INGREDIENT_PRICES = {
-    salad: 0.5,
-    cheese: 0.5,
+    salad: 0.75,
+    cheese: 1.0,
     meat: 1.25,
     bacon: 0.75,
-    bun: 0.5
+    bun: 0.5,
+    egg: 1.75
 }
 
 class BurgerBuilder extends React.Component {
@@ -31,6 +32,7 @@ class BurgerBuilder extends React.Component {
         axios.get('https://react-my-burger-39225.firebaseio.com/ingredients.json')
             .then(response => {
                 this.setState({ ingredients: response.data })
+                console.log(' [componentDidMount in BurerBuilder.js]: ', response.data)
             })
             .catch(err => { this.setState({ error: true }) })
     }
@@ -126,7 +128,9 @@ class BurgerBuilder extends React.Component {
             burger = (
                 <Aux>
                     <Burger ingredients={ingredients} />
-                    <BuildControls ingredientAdded={addIngredientHandler}
+                    <BuildControls
+                        ingredients={ingredients}
+                        ingredientAdded={addIngredientHandler}
                         ingredientRemove={removeIngredientHandler}
                         disabled={disabledInfo}
                         price={totalPrice.toFixed(2)}
