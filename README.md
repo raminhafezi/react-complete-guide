@@ -76,4 +76,14 @@ you have to see id_rsa.pub and id_rsa files
 
 Ramin
 
+============== ignore local changes and pull from remote git=========
+1- revert all local changes
+The Overwrite workflow:
+To overwrite your local files do:
+
+git fetch --all
+git reset --hard <remote>/<branch_name>
+
+
+2- git pull origin master
 
